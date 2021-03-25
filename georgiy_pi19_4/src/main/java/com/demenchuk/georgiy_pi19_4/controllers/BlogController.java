@@ -35,7 +35,7 @@ public class BlogController {
      * @param blog the blog
      * @return the response entity
      */
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<?> createBlog(@RequestBody BlogEntity blog) {
         blogService.create(blog);
         return new ResponseEntity<>(blog, HttpStatus.CREATED);
@@ -46,7 +46,7 @@ public class BlogController {
      *
      * @return the all blogs
      */
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<BlogEntity>> getAllBlogs() {
         List<BlogEntity> results = blogService.findAll();
         return new ResponseEntity<>(results, HttpStatus.OK);
